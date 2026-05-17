@@ -1,11 +1,11 @@
 import Hero from '../components/Hero';
 import Introduction from '../components/Introduction';
 import Expertise from '../components/Expertise';
+import Clients from '../components/Clients';
 import Industries from '../components/Industries';
 import Benefits from '../components/Benefits';
 import WhyUs from '../components/WhyUs';
 import EnterpriseSolution from '../components/EnterpriseSolution';
-import Stats from '../components/Stats';
 
 export default function Home() {
   return (
@@ -17,7 +17,7 @@ export default function Home() {
       <Benefits />
       <WhyUs />
       <EnterpriseSolution />
-      <Stats />
+      <Clients />
     </>
   );
 }

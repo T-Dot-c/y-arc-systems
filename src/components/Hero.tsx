@@ -89,9 +89,20 @@ export default function Hero() {
             transition={{ delay: 0.8, duration: 0.8 }}
             className="mb-32 flex justify-center"
           >
-            <button className="px-14 py-6 rounded-full bg-primary text-white font-black text-xs tracking-[0.2em] uppercase hover:bg-primary/95 transition-all active:scale-95 shadow-2xl flex items-center justify-center gap-3">
-              Request a Demo <ArrowRight className="w-4 h-4 text-secondary" />
-            </button>
+            <motion.button 
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="group px-14 py-6 rounded-full bg-primary text-white font-black text-xs tracking-[0.2em] uppercase hover:bg-secondary transition-colors duration-500 hover:shadow-[0_0_40px_rgba(0,81,213,0.5)] shadow-2xl flex items-center justify-center gap-3"
+            >
+              Request a Demo 
+              <motion.div
+                animate={{ x: [0, 4, 0] }}
+                transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+                className="flex items-center justify-center"
+              >
+                <ArrowRight className="w-4 h-4 text-secondary group-hover:text-white transition-colors duration-300" />
+              </motion.div>
+            </motion.button>
           </motion.div>
 
           {/* Animated Partner Showcase */}

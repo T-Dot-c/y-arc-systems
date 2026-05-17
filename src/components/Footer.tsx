@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { useState, ChangeEvent, FormEvent } from 'react';
+import { Phone, Mail, MapPin, Facebook, Linkedin, Youtube, ChevronUp, ChevronRight, User } from 'lucide-react';
 
 // --- SVG Icons ---
 const BriefcaseIcon = () => (
@@ -53,38 +54,34 @@ function ContactSection() {
   };
 
   return (
-    <section id="contact" className="bg-primary px-6 py-24 border-b border-white/5">
+    <section id="contact" className="bg-slate-50 px-6 py-24 border-b border-slate-200">
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
 
         {/* ── Left: copy + stats ── */}
         <div className="space-y-10">
           <div>
-            <p className="text-xs font-bold uppercase tracking-[0.2em] text-secondary-container mb-3">Get in Touch</p>
-            <h2 className="text-4xl md:text-5xl font-bold font-display leading-tight text-white">
-              Contact Us
-              <span className="block text-secondary-container text-2xl md:text-3xl font-semibold mt-1">
-                for project discussion
-              </span>
-            </h2>
-            <p className="mt-5 text-sm text-outline-variant/60 leading-relaxed max-w-md">
+            <p className="text-xs font-bold uppercase tracking-[0.2em] text-black/60 mb-3">Get in Touch</p>
+            <h2 className="text-4xl md:text-5xl font-bold font-display leading-tight text-black">
+              Contact Us                       </h2>
+            <p className="mt-5 text-sm text-black/60 leading-relaxed max-w-md">
               Once you fill out this form, our sales representatives will contact you within 24 hours. We're ready to transform your engineering vision into reality.
             </p>
           </div>
 
           {/* Stats 2×2 grid */}
-          <div className="grid grid-cols-2 gap-px bg-white/5 rounded-2xl overflow-hidden border border-white/5">
+          <div className="grid grid-cols-2 gap-px bg-slate-200 rounded-2xl overflow-hidden border border-slate-200">
             {stats.map((s) => (
-              <div key={s.label} className="bg-primary-container/60 backdrop-blur-sm p-6 flex flex-col gap-3 hover:bg-secondary/10 transition-colors">
-                <span className="text-secondary-container">{s.icon}</span>
-                <span className="text-2xl font-bold font-display text-white">{s.number}</span>
-                <span className="text-xs text-outline-variant/60 uppercase tracking-wider">{s.label}</span>
+              <div key={s.label} className="bg-white p-6 flex flex-col gap-3 hover:bg-blue-50 hover:shadow-[0_0_20px_rgba(239,246,255,1)] transition-all duration-300 group">
+                <span className="text-black/40 group-hover:text-secondary transition-colors">{s.icon}</span>
+                <span className="text-2xl font-bold font-display text-black/60 group-hover:text-black transition-colors">{s.number}</span>
+                <span className="text-xs text-black/60 uppercase tracking-wider">{s.label}</span>
               </div>
             ))}
           </div>
         </div>
 
         {/* ── Right: contact form card ── */}
-        <div className="bg-white rounded-2xl shadow-2xl p-8 md:p-10">
+        <div className="bg-white rounded-2xl shadow-[0_25px_50px_-12px_rgba(0,81,213,0.15)] p-8 md:p-10">
           {submitted ? (
             <div className="flex flex-col items-center justify-center h-full min-h-[400px] text-center gap-4">
               <div className="w-16 h-16 rounded-full bg-secondary/10 flex items-center justify-center mb-2">
@@ -243,47 +240,158 @@ function ContactSection() {
 }
 
 export default function Footer() {
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   return (
     <>
       <ContactSection />
-      <footer className="bg-primary text-white py-20 px-6 border-t border-white/5">
+      
+      {/* Redesigned Dark Royal Blue Footer */}
+      <footer className="relative bg-[#04152d] pt-20 pb-10 px-6 overflow-hidden">
+        {/* Background Wave Graphic */}
+        <div className="absolute bottom-0 left-0 w-full h-full pointer-events-none z-0">
+          <svg className="absolute bottom-0 w-full h-auto min-h-[50%]" viewBox="0 0 1440 320" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+            <path fill="#061d3f" d="M0,224L80,213.3C160,203,320,181,480,186.7C640,192,800,224,960,213.3C1120,203,1280,149,1360,122.7L1440,96L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"></path>
+          </svg>
+        </div>
 
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-16 md:gap-8">
-          <div className="space-y-6 md:col-span-1">
-            <div className="text-xl font-bold font-display">Y ARC Systems PLC</div>
-            <p className="text-sm text-outline-variant/60 leading-relaxed">
-              Expert-led engineering for the digital-first enterprise. Engineering clarity from complexity.
+        <div className="relative z-10 max-w-7xl mx-auto">
+          {/* Main 4-Column Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 mb-16">
+            
+            {/* Column 1: About & Badges */}
+            <div className="space-y-6">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-10 h-10 bg-secondary text-white flex items-center justify-center rounded-lg font-black text-xl">Y</div>
+                <div className="text-2xl font-black font-display text-white tracking-tight">YARC SYSTEMS</div>
+              </div>
+              <p className="text-sm text-slate-300 leading-[1.8] font-medium">
+                YARC Systems is a technology solution provider company situated in Addis Ababa, Ethiopia. We are a reliable Software Development, ERP Implementation Solution, Networking solutions and SEO service provider in Ethiopia. We provide custom web, software, multi-platform solutions for Enterprise and Startup companies.
+              </p>
+              <button className="flex items-center gap-2 px-5 py-2.5 bg-white/5 border border-white/10 rounded-lg text-sm font-bold text-white shadow-sm hover:bg-white/10 transition-colors">
+                <User className="w-4 h-4 text-slate-300" /> About Us
+              </button>
+              
+              {/* Badges Placeholder */}
+              <div className="flex flex-wrap gap-3 pt-4">
+                {[1, 2, 3, 4, 5].map((i) => (
+                  <div key={i} className="w-12 h-12 bg-white/5 border border-white/10 rounded-full flex items-center justify-center shadow-sm">
+                    <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-[8px] font-black text-white/50 text-center leading-none">
+                      AWARD {i}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Column 2: Quick Links */}
+            <div className="space-y-6 lg:pl-8">
+              <h4 className="text-lg font-bold text-blue-400 font-display">Quick Links</h4>
+              <ul className="space-y-3.5 text-sm font-medium text-slate-300">
+                <li><Link className="hover:text-white transition-colors" to="/">Software Development</Link></li>
+                <li><Link className="hover:text-white transition-colors" to="/">ERP Solutions</Link></li>
+                <li><Link className="hover:text-white transition-colors" to="/">Website Development</Link></li>
+                <li><Link className="hover:text-white transition-colors" to="/">Gaming Software</Link></li>
+                <li><Link className="hover:text-white transition-colors" to="/">Shortcode VAS Software</Link></li>
+                <li><Link className="hover:text-white transition-colors" to="/">SEO Service</Link></li>
+                <li><Link className="hover:text-white transition-colors" to="/">Business and IT Consulting</Link></li>
+                <li><Link className="hover:text-white transition-colors" to="/">Website Hosting</Link></li>
+              </ul>
+            </div>
+
+            {/* Column 3: Modules & About */}
+            <div className="space-y-8">
+              <div className="space-y-6">
+                <h4 className="text-lg font-bold text-blue-400 font-display">Popular Software Modules</h4>
+                <ul className="space-y-3.5 text-sm font-medium text-slate-300">
+                  <li><Link className="hover:text-white transition-colors" to="/">Accounting and Finance</Link></li>
+                  <li><Link className="hover:text-white transition-colors" to="/">HR, Payroll, Leave & Attendance</Link></li>
+                  <li><Link className="hover:text-white transition-colors" to="/">Inventory or Warehouse</Link></li>
+                  <li><Link className="hover:text-white transition-colors" to="/">Sales Management</Link></li>
+                  <li><Link className="hover:text-white transition-colors" to="/">Purchase Management</Link></li>
+                </ul>
+              </div>
+              <div className="space-y-6">
+                <h4 className="text-lg font-bold text-blue-400 font-display">About Us</h4>
+                <ul className="space-y-3.5 text-sm font-medium text-slate-300">
+                  <li><Link className="hover:text-white transition-colors" to="/">Who We Are</Link></li>
+                  <li><Link className="hover:text-white transition-colors" to="/">Contact Us</Link></li>
+                  <li><Link className="hover:text-white transition-colors" to="/">Privacy Policy</Link></li>
+                  <li><Link className="hover:text-white transition-colors" to="/">Disclaimer</Link></li>
+                </ul>
+              </div>
+            </div>
+
+            {/* Column 4: Contact & CTA */}
+            <div className="space-y-8">
+              <h4 className="text-lg font-bold text-blue-400 font-display">Contact Us</h4>
+              
+              <ul className="space-y-5 text-sm font-medium text-slate-300">
+                <li className="flex gap-3">
+                  <Phone className="w-5 h-5 text-blue-400 shrink-0" />
+                  <div className="flex flex-col gap-1">
+                    <span>+251-911-645867</span>
+                    <span>+251-912-974411</span>
+                  </div>
+                </li>
+                <li className="flex items-center gap-3">
+                  <Mail className="w-5 h-5 text-blue-400 shrink-0" />
+                  <span>info@yarcsystems.com</span>
+                </li>
+                <li className="flex gap-3">
+                  <MapPin className="w-5 h-5 text-blue-400 shrink-0" />
+                  <div className="flex flex-col gap-1">
+                    <span>2nd Floor Gulf Aziz Bldg,</span>
+                    <span>In-front of Bonanza Hotel</span>
+                    <span>Addis Ababa | Ethiopia</span>
+                  </div>
+                </li>
+              </ul>
+
+              {/* Social Icons */}
+              <div className="flex items-center gap-3">
+                <a href="#" aria-label="Visit our Facebook page" className="w-10 h-10 rounded-full bg-white/5 text-white flex items-center justify-center hover:bg-secondary transition-colors shadow-md border border-white/10">
+                  <Facebook className="w-5 h-5" fill="currentColor" stroke="none" />
+                </a>
+                <a href="#" aria-label="Visit our LinkedIn page" className="w-10 h-10 rounded-full bg-white/5 text-white flex items-center justify-center hover:bg-secondary transition-colors shadow-md border border-white/10">
+                  <Linkedin className="w-5 h-5" fill="currentColor" stroke="none" />
+                </a>
+                <a href="#" aria-label="Visit our YouTube channel" className="w-10 h-10 rounded-full bg-white/5 text-white flex items-center justify-center hover:bg-secondary transition-colors shadow-md border border-white/10">
+                  <Youtube className="w-5 h-5" />
+                </a>
+              </div>
+
+              {/* CTA Box */}
+              <div className="bg-white/5 border border-white/10 p-8 rounded-xl shadow-xl relative overflow-hidden group cursor-pointer hover:bg-secondary transition-colors duration-500">
+                <div className="absolute inset-0 hero-grid-bg opacity-5 pointer-events-none" />
+                <div className="relative z-10 flex flex-col items-center justify-center text-center gap-2">
+                  <h3 className="text-xl font-bold text-white font-display">Visit Demo</h3>
+                  <div className="flex items-center gap-2 text-white/80 text-sm font-semibold group-hover:text-white transition-colors">
+                    Check it out <ChevronRight className="w-4 h-4" />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          {/* Bottom Bar */}
+          <div className="flex flex-col md:flex-row items-center justify-between pt-8 border-t border-white/10">
+            <button 
+              onClick={scrollToTop}
+              aria-label="Scroll to top of page"
+              className="w-10 h-10 bg-white/5 border border-white/10 rounded-full flex items-center justify-center text-slate-300 shadow-sm hover:bg-secondary hover:text-white hover:border-secondary transition-all mb-4 md:mb-0"
+            >
+              <ChevronUp className="w-5 h-5" />
+            </button>
+            
+            <p className="text-sm font-medium text-slate-400">
+              YARC Systems PLC &copy; All rights reserved contents
             </p>
-          </div>
-
-          <div className="space-y-6">
-            <h6 className="text-xs font-bold uppercase tracking-[0.2em] text-secondary-container">Solutions</h6>
-            <ul className="space-y-4 text-sm text-outline-variant/60">
-              <li><Link className="hover:text-white transition-colors" to="/">Healthcare Solutions</Link></li>
-              <li><Link className="hover:text-white transition-colors" to="/">Real Estate Systems</Link></li>
-              <li><Link className="hover:text-white transition-colors" to="/">ERP Modules</Link></li>
-              <li><Link className="hover:text-white transition-colors" to="/">Custom Development</Link></li>
-            </ul>
-          </div>
-
-          <div className="space-y-6">
-            <h6 className="text-xs font-bold uppercase tracking-[0.2em] text-secondary-container">Company</h6>
-            <ul className="space-y-4 text-sm text-outline-variant/60">
-              <li><Link className="hover:text-white transition-colors" to="/">Our Story</Link></li>
-              <li><Link className="hover:text-white transition-colors" to="/">Core Values</Link></li>
-              <li><Link className="hover:text-white transition-colors" to="/">Team</Link></li>
-              <li><Link className="hover:text-white transition-colors" to="/">Careers</Link></li>
-            </ul>
-          </div>
-
-          <div className="space-y-6">
-            <h6 className="text-xs font-bold uppercase tracking-[0.2em] text-secondary-container">Headquarters</h6>
-            <ul className="space-y-4 text-sm text-outline-variant/60">
-              <li>Addis Ababa, Ethiopia</li>
-              <li>Bole Sub-city, Woreda 03</li>
-              <li>IT Park, R&D Center</li>
-              <li className="pt-4 border-t border-white/5">© {new Date().getFullYear()} YARC Systems PLC.</li>
-            </ul>
+            
+            <div className="hidden md:block w-10 h-10" /> {/* Spacer for balance */}
           </div>
         </div>
       </footer>

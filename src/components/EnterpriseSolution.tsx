@@ -91,14 +91,14 @@ export default function EnterpriseSolution() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.05 }}
-              className="bg-white p-8 rounded-2xl shadow-xl shadow-primary/5 flex flex-col items-start gap-6 group hover:-translate-y-1 transition-all duration-300 border border-slate-100"
+              className="bg-white p-8 rounded-2xl shadow-[0_15px_40px_rgba(239,246,255,1)] flex flex-col items-start gap-6 group hover:bg-secondary hover:-translate-y-1 transition-all duration-300 border border-slate-100"
             >
-              <div className="w-14 h-14 rounded-full bg-blue-50 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors duration-300">
+              <div className="w-14 h-14 rounded-full bg-secondary/70 flex items-center justify-center text-white group-hover:bg-white group-hover:text-secondary transition-colors duration-300">
                 {module.icon}
               </div>
               <div className="space-y-4">
-                <h3 className="text-lg font-black text-primary font-display leading-tight">{module.title}</h3>
-                <p className="text-outline text-xs leading-relaxed font-medium">
+                <h3 className="text-lg font-black text-primary group-hover:text-white font-display leading-tight transition-colors">{module.title}</h3>
+                <p className="text-outline text-xs leading-relaxed font-medium group-hover:text-white/90 transition-colors">
                   {module.desc}
                 </p>
               </div>
@@ -115,7 +115,7 @@ export default function EnterpriseSolution() {
           >
             <Link 
               to="/erp-system"
-              className="group relative inline-flex items-center gap-3 px-12 py-5 bg-white text-primary font-black uppercase tracking-widest text-xs overflow-hidden rounded-sm transition-all duration-500 shadow-xl hover:shadow-[0_20px_50px_rgba(30,64,175,0.15)] ring-1 ring-primary/5"
+              className="group relative inline-flex items-center gap-3 px-12 py-5 bg-blue-50 text-primary font-black uppercase tracking-widest text-xs overflow-hidden rounded-sm transition-all duration-500 shadow-xl hover:shadow-[0_20px_50px_rgba(30,64,175,0.15)] ring-1 ring-primary/5"
             >
               <span className="relative z-10 group-hover:text-white transition-colors duration-300">Read More About ERP</span>
               <div className="absolute inset-0 bg-gradient-to-r from-primary to-secondary scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-500" />

@@ -103,19 +103,21 @@ export default function Expertise() {
               key={index}
               id={service.id === 'enterprise-solutions' ? 'expertise-card-erp' : service.id}
               variants={item}
-              className="bg-white p-12 rounded-[2.5rem] border border-outline-variant/20 shadow-xl shadow-black/5 hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 flex flex-col items-center text-center group"
+              className="bg-white p-8 rounded-2xl border border-slate-100 shadow-[0_15px_40px_rgba(239,246,255,1)] hover:bg-secondary hover:-translate-y-1 transition-all duration-300 flex flex-col items-start text-left gap-6 group"
             >
-              <div className="w-24 h-24 bg-secondary/10 text-secondary flex items-center justify-center rounded-full mb-10 group-hover:scale-110 transition-transform duration-500">
+              <div className="w-14 h-14 bg-secondary/70 text-white flex items-center justify-center rounded-full shrink-0 group-hover:bg-white group-hover:text-secondary transition-colors duration-300">
                 {service.icon}
               </div>
-              <h3 className="text-2xl font-black mb-6 text-primary font-display leading-tight min-h-[4rem] flex items-center">
-                {service.title}
-              </h3>
-              <p className="text-sm text-outline font-medium leading-[1.8] mb-10 flex-1">
-                {service.desc}
-              </p>
-              <div className="flex items-center gap-2 text-secondary text-xs font-black uppercase tracking-[0.2em] cursor-pointer group-hover:gap-4 transition-all">
-                Learn More <ChevronRight className="w-4 h-4" />
+              <div className="space-y-4 flex-1 flex flex-col">
+                <h3 className="text-lg font-black text-[#0f172a] group-hover:text-white font-display leading-tight transition-colors">
+                  {service.title}
+                </h3>
+                <p className="text-xs text-[#64748b] group-hover:text-white/90 font-medium leading-relaxed transition-colors flex-1">
+                  {service.desc}
+                </p>
+                <div className="flex items-center gap-2 text-secondary group-hover:text-white text-[10px] font-black uppercase tracking-[0.2em] cursor-pointer group-hover:gap-4 transition-all pt-2">
+                  Learn More <ChevronRight className="w-4 h-4" />
+                </div>
               </div>
             </motion.div>
           ))}
