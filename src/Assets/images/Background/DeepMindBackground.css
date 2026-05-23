@@ -1,0 +1,61 @@
+.deepmind-container {
+  perspective: 1500px;
+  transform-style: preserve-3d;
+}
+
+.deepmind-3d-scene {
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+.deepmind-orb-layer {
+  transform-style: preserve-3d;
+}
+
+.deepmind-glass-shard {
+  -webkit-backdrop-filter: blur(8px) saturate(180%);
+  backdrop-filter: blur(8px) saturate(180%);
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
+  transform-style: preserve-3d;
+}
+
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0) rotateX(0deg); }
+  50% { transform: translateY(-30px) rotateX(5deg); }
+}
+
+.animate-float-slow {
+  animation: float-slow 15s ease-in-out infinite;
+}
+
+.iridescent-mesh {
+  background: linear-gradient(
+    45deg,
+    rgba(59, 130, 246, 0.2),
+    rgba(147, 51, 234, 0.2),
+    rgba(236, 72, 153, 0.2),
+    rgba(59, 130, 246, 0.2)
+  );
+  background-size: 400% 400%;
+  animation: mesh-flow 10s ease infinite;
+}
+
+@keyframes mesh-flow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.grain-texture {
+  pointer-events: none;
+  opacity: 0.05;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+/* Safari support for the main orb backdrop blur */
+.deepmind-orb-core {
+  -webkit-backdrop-filter: blur(64px);
+  backdrop-filter: blur(64px);
+}
