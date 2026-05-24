@@ -61,15 +61,17 @@ function ContactSection() {
         <div className="space-y-10">
           <div>
             <p className="text-xs font-bold uppercase tracking-[0.2em] text-black/60 mb-3">Get in Touch</p>
-            <h2 className="text-4xl md:text-5xl font-bold font-display leading-tight text-black">
-              Contact Us                       </h2>
+            <h1 className="text-4xl md:text-8xl font-bold font-display leading-tight text-[#0051d5]">
+              Let's build <br />
+              together
+            </h1>
             <p className="mt-5 text-sm text-black/60 leading-relaxed max-w-md">
               Once you fill out this form, our sales representatives will contact you within 24 hours. We're ready to transform your engineering vision into reality.
             </p>
           </div>
 
           {/* Stats 2×2 grid */}
-          <div className="grid grid-cols-2 gap-px bg-slate-200 rounded-2xl overflow-hidden border border-slate-200">
+          {/* <div className="grid grid-cols-2 gap-px bg-slate-200 rounded-2xl overflow-hidden border border-slate-200">
             {stats.map((s) => (
               <div key={s.label} className="bg-white p-6 flex flex-col gap-3 hover:bg-blue-50 hover:shadow-[0_0_20px_rgba(239,246,255,1)] transition-all duration-300 group">
                 <span className="text-black/40 group-hover:text-secondary transition-colors">{s.icon}</span>
@@ -77,7 +79,7 @@ function ContactSection() {
                 <span className="text-xs text-black/60 uppercase tracking-wider">{s.label}</span>
               </div>
             ))}
-          </div>
+          </div> */}
         </div>
 
         {/* ── Right: contact form card ── */}
@@ -179,7 +181,7 @@ function ContactSection() {
                 </div>
 
                 {/* Services dropdown */}
-                <div className="flex flex-col gap-1.5">
+                {/* <div className="flex flex-col gap-1.5">
                   <label htmlFor="contact-service" className="text-xs font-semibold text-on-background uppercase tracking-wide">
                     Services <span className="text-secondary">*</span>
                   </label>
@@ -201,7 +203,7 @@ function ContactSection() {
                       </svg>
                     </span>
                   </div>
-                </div>
+                </div> */}
 
                 {/* Message */}
                 <div className="flex flex-col gap-1.5">
@@ -247,35 +249,33 @@ export default function Footer() {
   return (
     <>
       <ContactSection />
-      
+
       {/* Redesigned Dark Royal Blue Footer */}
-      <footer className="relative bg-[#04152d] pt-20 pb-10 px-6 overflow-hidden">
+      <footer className="relative bg-[#ffff] pt-20 pb-10 px-6 overflow-hidden">
         {/* Background Wave Graphic */}
         <div className="absolute bottom-0 left-0 w-full h-full pointer-events-none z-0">
           <svg className="absolute bottom-0 w-full h-auto min-h-[50%]" viewBox="0 0 1440 320" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-            <path fill="#061d3f" d="M0,224L80,213.3C160,203,320,181,480,186.7C640,192,800,224,960,213.3C1120,203,1280,149,1360,122.7L1440,96L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"></path>
+            <path fill="#F0F4F8" d="M0,224L80,213.3C160,203,320,181,480,186.7C640,192,800,224,960,213.3C1120,203,1280,149,1360,122.7L1440,96L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"></path>
           </svg>
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto">
           {/* Main 4-Column Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 mb-16">
-            
+
             {/* Column 1: About & Badges */}
             <div className="space-y-6">
               <div className="flex items-center gap-3 mb-4">
                 <div className="w-10 h-10 bg-secondary text-white flex items-center justify-center rounded-lg font-black text-xl">Y</div>
-                <div className="text-2xl font-black font-display text-white tracking-tight">YARC SYSTEMS</div>
+                <div className="text-2xl font-bold  text-blue-500 text-[#0051d5] tracking-tight">YARC SYSTEMS</div>
               </div>
-              <p className="text-sm text-slate-300 leading-[1.8] font-medium">
+              <p className="text-sm text-slate-400 leading-[1.8] font-medium">
                 YARC Systems is a technology solution provider company situated in Addis Ababa, Ethiopia. We are a reliable Software Development, ERP Implementation Solution, Networking solutions and SEO service provider in Ethiopia. We provide custom web, software, multi-platform solutions for Enterprise and Startup companies.
               </p>
-              <button className="flex items-center gap-2 px-5 py-2.5 bg-white/5 border border-white/10 rounded-lg text-sm font-bold text-white shadow-sm hover:bg-white/10 transition-colors">
-                <User className="w-4 h-4 text-slate-300" /> About Us
-              </button>
-              
+
               {/* Badges Placeholder */}
-              <div className="flex flex-wrap gap-3 pt-4">
+
+              {/* <div className="flex flex-wrap gap-3 pt-4">
                 {[1, 2, 3, 4, 5].map((i) => (
                   <div key={i} className="w-12 h-12 bg-white/5 border border-white/10 rounded-full flex items-center justify-center shadow-sm">
                     <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-[8px] font-black text-white/50 text-center leading-none">
@@ -283,92 +283,87 @@ export default function Footer() {
                     </div>
                   </div>
                 ))}
-              </div>
+              </div> */}
             </div>
 
             {/* Column 2: Quick Links */}
             <div className="space-y-6 lg:pl-8">
-              <h4 className="text-lg font-bold text-blue-400 font-display">Quick Links</h4>
-              <ul className="space-y-3.5 text-sm font-medium text-slate-300">
-                <li><Link className="hover:text-white transition-colors" to="/">Software Development</Link></li>
-                <li><Link className="hover:text-white transition-colors" to="/">ERP Solutions</Link></li>
-                <li><Link className="hover:text-white transition-colors" to="/">Website Development</Link></li>
-                <li><Link className="hover:text-white transition-colors" to="/">Gaming Software</Link></li>
-                <li><Link className="hover:text-white transition-colors" to="/">Shortcode VAS Software</Link></li>
-                <li><Link className="hover:text-white transition-colors" to="/">SEO Service</Link></li>
-                <li><Link className="hover:text-white transition-colors" to="/">Business and IT Consulting</Link></li>
-                <li><Link className="hover:text-white transition-colors" to="/">Website Hosting</Link></li>
+              <h4 className="text-lg font-bold text-blue-500 font-display">Quick Links</h4>
+              <ul className="space-y-3.5 text-sm font-medium text-slate-400">
+                <li><Link className="hover:text-[#0051d5] transition-colors" to="/">Software Development</Link></li>
+                <li><Link className="hover:text-[#0051d5] transition-colors" to="/">ERP Solutions</Link></li>
+                <li><Link className="hover:text-[#0051d5] transition-colors" to="/">Website Development</Link></li>
+                <li><Link className="hover:text-[#0051d5] transition-colors" to="/">SEO Service</Link></li>
+                <li><Link className="hover:text-[#0051d5] transition-colors" to="/">Website Hosting</Link></li>
               </ul>
             </div>
 
             {/* Column 3: Modules & About */}
             <div className="space-y-8">
               <div className="space-y-6">
-                <h4 className="text-lg font-bold text-blue-400 font-display">Popular Software Modules</h4>
-                <ul className="space-y-3.5 text-sm font-medium text-slate-300">
-                  <li><Link className="hover:text-white transition-colors" to="/">Accounting and Finance</Link></li>
-                  <li><Link className="hover:text-white transition-colors" to="/">HR, Payroll, Leave & Attendance</Link></li>
-                  <li><Link className="hover:text-white transition-colors" to="/">Inventory or Warehouse</Link></li>
-                  <li><Link className="hover:text-white transition-colors" to="/">Sales Management</Link></li>
-                  <li><Link className="hover:text-white transition-colors" to="/">Purchase Management</Link></li>
+                <h4 className="text-lg font-bold text-blue-500 font-display">Popular Software Modules</h4>
+                <ul className="space-y-3.5 text-sm font-medium text-slate-400">
+                  <li><Link className="hover:text-[#0051d5] transition-colors" to="/">Accounting and Finance</Link></li>
+                  <li><Link className="hover:text-[#0051d5] transition-colors" to="/">HR, Payroll, Leave & Attendance</Link></li>
+                  <li><Link className="hover:text-[#0051d5] transition-colors" to="/">Inventory or Warehouse</Link></li>
+                  <li><Link className="hover:text-[#0051d5] transition-colors" to="/">Sales Management</Link></li>
+                  <li><Link className="hover:text-[#0051d5] transition-colors" to="/">Purchase Management</Link></li>
                 </ul>
               </div>
               <div className="space-y-6">
-                <h4 className="text-lg font-bold text-blue-400 font-display">About Us</h4>
-                <ul className="space-y-3.5 text-sm font-medium text-slate-300">
-                  <li><Link className="hover:text-white transition-colors" to="/">Who We Are</Link></li>
-                  <li><Link className="hover:text-white transition-colors" to="/">Contact Us</Link></li>
-                  <li><Link className="hover:text-white transition-colors" to="/">Privacy Policy</Link></li>
-                  <li><Link className="hover:text-white transition-colors" to="/">Disclaimer</Link></li>
+                <h4 className="text-lg font-bold text-blue-500 font-display">About Us</h4>
+                <ul className="space-y-3.5 text-sm font-medium text-slate-400 ">
+                  <li><Link className="hover:text-[#0051d5] transition-colors" to="/">Who We Are</Link></li>
+                  <li><Link className="hover:text-[#0051d5] transition-colors" to="/">Contact Us</Link></li>
+                  <li><Link className="hover:text-[#0051d5] transition-colors" to="/">Privacy Policy</Link></li>
+                  <li><Link className="hover:text-[#0051d5] transition-colors" to="/">Disclaimer</Link></li>
                 </ul>
               </div>
             </div>
 
             {/* Column 4: Contact & CTA */}
             <div className="space-y-8">
-              <h4 className="text-lg font-bold text-blue-400 font-display">Contact Us</h4>
-              
-              <ul className="space-y-5 text-sm font-medium text-slate-300">
+              <h4 className="text-lg font-bold text-blue-500 font-display ">Contact Us</h4>
+
+              <ul className="space-y-5 text-sm font-medium text-slate-400">
                 <li className="flex gap-3">
-                  <Phone className="w-5 h-5 text-blue-400 shrink-0" />
-                  <div className="flex flex-col gap-1">
-                    <span>+251-911-645867</span>
-                    <span>+251-912-974411</span>
+                  <Phone className="w-5 h-5 text-[#64748b]" />
+                  <div className="flex flex-col gap-1 ">
+                    <span className="hover:text-[#0051d5] transition-colors">+251-931-523460</span>
+                    <span className="hover:text-[#0051d5] transition-colors">+251-931-523464</span>
                   </div>
                 </li>
                 <li className="flex items-center gap-3">
-                  <Mail className="w-5 h-5 text-blue-400 shrink-0" />
-                  <span>info@yarcsystems.com</span>
+                  <Mail className="w-5 h-5 text-[#64748b]" />
+                  <span className="hover:text-[#0051d5] transition-colors">get@yarcsystems.com</span>
                 </li>
                 <li className="flex gap-3">
-                  <MapPin className="w-5 h-5 text-blue-400 shrink-0" />
+                  <MapPin className="w-5 h-5 text-[#64748b]" />
                   <div className="flex flex-col gap-1">
-                    <span>2nd Floor Gulf Aziz Bldg,</span>
-                    <span>In-front of Bonanza Hotel</span>
-                    <span>Addis Ababa | Ethiopia</span>
+                    <span className="hover:text-[#0051d5] transition-colors">Addis Ababa | Ethiopia</span>
                   </div>
                 </li>
               </ul>
 
               {/* Social Icons */}
               <div className="flex items-center gap-3">
-                <a href="#" aria-label="Visit our Facebook page" className="w-10 h-10 rounded-full bg-white/5 text-white flex items-center justify-center hover:bg-secondary transition-colors shadow-md border border-white/10">
+                <a href="#" aria-label="Visit our Facebook page" className="w-10 h-10 rounded-full bg-[#F0F4F8]/5 text-[#64748b] flex items-center justify-center hover:bg-secondary transition-colors shadow-md border border-white/10 hover:text-white">
                   <Facebook className="w-5 h-5" fill="currentColor" stroke="none" />
                 </a>
-                <a href="#" aria-label="Visit our LinkedIn page" className="w-10 h-10 rounded-full bg-white/5 text-white flex items-center justify-center hover:bg-secondary transition-colors shadow-md border border-white/10">
+                <a href="#" aria-label="Visit our LinkedIn page" className="w-10 h-10 rounded-full bg-[#F0F4F8]/5 text-[#64748b] flex items-center justify-center hover:bg-secondary transition-colors shadow-md border border-white/10 hover:text-white">
                   <Linkedin className="w-5 h-5" fill="currentColor" stroke="none" />
                 </a>
-                <a href="#" aria-label="Visit our YouTube channel" className="w-10 h-10 rounded-full bg-white/5 text-white flex items-center justify-center hover:bg-secondary transition-colors shadow-md border border-white/10">
+                <a href="#" aria-label="Visit our YouTube channel" className="w-10 h-10 rounded-full bg-[#F0F4F8]/5 text-[#64748b] flex items-center justify-center hover:bg-secondary transition-colors shadow-md border border-white/10 hover:text-white">
                   <Youtube className="w-5 h-5" />
                 </a>
               </div>
 
               {/* CTA Box */}
-              <div className="bg-white/5 border border-white/10 p-8 rounded-xl shadow-xl relative overflow-hidden group cursor-pointer hover:bg-secondary transition-colors duration-500">
+              <div className="bg-[#F0F4F8] border border-white/10 p-8 rounded-xl shadow-xl relative overflow-hidden group cursor-pointer hover:bg-secondary transition-colors duration-500">
                 <div className="absolute inset-0 hero-grid-bg opacity-5 pointer-events-none" />
                 <div className="relative z-10 flex flex-col items-center justify-center text-center gap-2">
-                  <h3 className="text-xl font-bold text-white font-display">Visit Demo</h3>
-                  <div className="flex items-center gap-2 text-white/80 text-sm font-semibold group-hover:text-white transition-colors">
+                  <h3 className="text-xl font-bold text-[#64748b] font-display group-hover:text-white">Visit Demo</h3>
+                  <div className="flex items-center gap-2 text-[#64748b] text-sm font-semibold group-hover:text-white transition-colors">
                     Check it out <ChevronRight className="w-4 h-4" />
                   </div>
                 </div>
@@ -379,18 +374,18 @@ export default function Footer() {
 
           {/* Bottom Bar */}
           <div className="flex flex-col md:flex-row items-center justify-between pt-8 border-t border-white/10">
-            <button 
+            <button
               onClick={scrollToTop}
               aria-label="Scroll to top of page"
               className="w-10 h-10 bg-white/5 border border-white/10 rounded-full flex items-center justify-center text-slate-300 shadow-sm hover:bg-secondary hover:text-white hover:border-secondary transition-all mb-4 md:mb-0"
             >
               <ChevronUp className="w-5 h-5" />
             </button>
-            
+
             <p className="text-sm font-medium text-slate-400">
               YARC Systems PLC &copy; All rights reserved contents
             </p>
-            
+
             <div className="hidden md:block w-10 h-10" /> {/* Spacer for balance */}
           </div>
         </div>

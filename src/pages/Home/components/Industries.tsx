@@ -1,65 +1,21 @@
 import { motion } from 'motion/react';
-import { Database, Code, Globe, Building2, ShoppingCart, Heart, Shield, Users, Truck, Landmark, ChevronRight } from 'lucide-react';
+import { Globe, Building2, ShoppingCart, Heart, Shield, Users, Truck, Landmark, ChevronRight } from 'lucide-react';
+import './Industries.css';
 
 const industries = [
-  {
-    id: 'healthcare',
-    icon: <Heart className="w-8 h-8" />,
-    title: 'Healthcare Industry',
-    desc: 'Digital healthcare solutions designed to improve patient care, operational efficiency, and regulatory compliance through integrated systems.'
-  },
-  {
-    id: 'real-estate',
-    icon: <Building2 className="w-8 h-8" />,
-    title: 'Real Estate Industry',
-    desc: 'Specialized solutions for developers to manage property listings, unit availability, and high-conversion sales pipelines.'
-  },
-  {
-    id: 'enterprise-corporate',
-    icon: <Landmark className="w-8 h-8" />,
-    title: 'Enterprise & Corporate',
-    desc: 'Comprehensive ERP systems built to centralize and automate organizational operations, finance, and human resources.'
-  },
-  {
-    id: 'retail-distribution',
-    icon: <ShoppingCart className="w-8 h-8" />,
-    title: 'Retail & Distribution',
-    desc: 'Technology solutions for retail operations, inventory control, and multi-branch supply chain management.'
-  },
-  {
-    id: 'digital-commerce',
-    icon: <Globe className="w-8 h-8" />,
-    title: 'Digital Commerce',
-    desc: 'Modern digital platforms helping businesses establish and grow their online presence with high-performance web solutions.'
-  },
-  {
-    id: 'security-infra-solutions',
-    icon: <Shield className="w-8 h-8" />,
-    title: 'Security & Infrastructure',
-    desc: 'Professional security systems and digital infrastructure designed to support organizational safety and control.'
-  },
-  {
-    id: 'smb-solutions',
-    icon: <Users className="w-8 h-8" />,
-    title: 'Small & Medium Business',
-    desc: 'Affordable and scalable digital systems designed for growing businesses to digitize their manual operations.'
-  },
-  {
-    id: 'import-export',
-    icon: <Truck className="w-8 h-8" />,
-    title: 'Import and Export',
-    desc: 'Digital management of logistics, customs documentation, and global supply chain visibility for international trade.'
-  }
+  { id: 'healthcare', icon: <Heart className="w-8 h-8" />, title: 'Healthcare Industry', desc: 'Digital healthcare solutions designed to improve patient care, operational efficiency, and regulatory compliance through integrated systems.' },
+  { id: 'real-estate', icon: <Building2 className="w-8 h-8" />, title: 'Real Estate Industry', desc: 'Specialized solutions for developers to manage property listings, unit availability, and high-conversion sales pipelines.' },
+  { id: 'enterprise-corporate', icon: <Landmark className="w-8 h-8" />, title: 'Enterprise & Corporate', desc: 'Comprehensive ERP systems built to centralize and automate organizational operations, finance, and human resources.' },
+  { id: 'retail-distribution', icon: <ShoppingCart className="w-8 h-8" />, title: 'Retail & Distribution', desc: 'Technology solutions for retail operations, inventory control, and multi-branch supply chain management.' },
+  { id: 'digital-commerce', icon: <Globe className="w-8 h-8" />, title: 'Digital Commerce', desc: 'Modern digital platforms helping businesses establish and grow their online presence with high-performance web solutions.' },
+  { id: 'security-infra-solutions', icon: <Shield className="w-8 h-8" />, title: 'Security & Infrastructure', desc: 'Professional security systems and digital infrastructure designed to support organizational safety and control.' },
+  { id: 'smb-solutions', icon: <Users className="w-8 h-8" />, title: 'Small & Medium Business', desc: 'Affordable and scalable digital systems designed for growing businesses to digitize their manual operations.' },
+  { id: 'import-export', icon: <Truck className="w-8 h-8" />, title: 'Import and Export', desc: 'Digital management of logistics, customs documentation, and global supply chain visibility for international trade.' },
 ];
 
 const container = {
   hidden: { opacity: 0 },
-  show: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.1
-    }
-  }
+  show: { opacity: 1, transition: { staggerChildren: 0.1 } }
 };
 
 const item = {
@@ -69,40 +25,36 @@ const item = {
 
 export default function Industries() {
   return (
-    <section id="industries" className="py-32 px-6 bg-transparent overflow-hidden">
-      <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-24">
-          <h2 className="text-4xl md:text-6xl font-black text-white mb-6 font-display tracking-tight">Industries We Serve</h2>
-          <p className="text-xl text-white/60 max-w-3xl mx-auto leading-relaxed">
+    <section id="industries" className="industries-section">
+      <div className="industries-container">
+        <div className="industries-header">
+          <h2 className="industries-heading">Industries We Serve</h2>
+          <p className="industries-subtext">
             Deep domain expertise across diverse sectors, delivering technology that powers transformation.
           </p>
         </div>
 
-        <motion.div 
+        <motion.div
           variants={container}
           initial="hidden"
           whileInView="show"
           viewport={{ once: true }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+          className="industries-grid"
         >
           {industries.map((sector) => (
-            <motion.div 
+            <motion.div
               key={sector.id}
               id={sector.id}
               variants={item}
-              className="bg-white/5 backdrop-blur-sm p-8 rounded-2xl border border-white/5 flex flex-col items-start text-left gap-6 group hover:bg-secondary hover:-translate-y-1 transition-all duration-300"
+              className="industries-card"
             >
-              <div className="w-14 h-14 bg-secondary-fixed/20 text-secondary-fixed flex items-center justify-center rounded-full shrink-0 group-hover:bg-white group-hover:text-secondary transition-colors duration-300">
+              <div className="industries-icon-wrap">
                 {sector.icon}
               </div>
-              <div className="space-y-4 flex-1 flex flex-col">
-                <h3 className="text-lg font-black text-white group-hover:text-white font-display leading-tight transition-colors">
-                  {sector.title}
-                </h3>
-                <p className="text-xs text-white/50 group-hover:text-white/90 font-medium leading-relaxed transition-colors flex-1">
-                  {sector.desc}
-                </p>
-                <div className="flex items-center gap-2 text-secondary-fixed group-hover:text-white text-[10px] font-black uppercase tracking-[0.2em] cursor-pointer group-hover:gap-4 transition-all pt-2">
+              <div className="industries-card-body">
+                <h3 className="industries-card-title">{sector.title}</h3>
+                <p className="industries-card-desc">{sector.desc}</p>
+                <div className="industries-card-link">
                   Learn More <ChevronRight className="w-4 h-4" />
                 </div>
               </div>

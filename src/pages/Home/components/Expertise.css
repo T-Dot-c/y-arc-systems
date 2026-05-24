@@ -1,13 +1,13 @@
 .expertise-section {
-  --expertise-bg: #f9f9f9;
+  --expertise-bg: linear-gradient(151deg, #ffff, #0051d5);
   --expertise-surface: #ffffff;
   --expertise-border: #ffffff;
-  --expertise-text-primary: #050510;
-  --expertise-text-secondary: #3d3d3d;
+  --expertise-text-primary: #0051d5;
+  --expertise-tesssxt-secondary: #3d3d3d;
   --expertise-text-muted: #64748b;
   --expertise-accent: #3d3d3d;
   --expertise-accent-fixed: #dbe1ff;
-  --expertise-accent-fixed-dark: #3d3d3d;
+  --expertise-accent-fixed-dark: #0051d5;
   --expertise-white: #F0F4F8;
 
   background-color: var(--expertise-bg);
@@ -28,12 +28,12 @@
 .expertise-card {
   background-color: var(--expertise-surface);
   border-color: var(--expertise-border);
-  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 10px 30px -10px #dfdede;
   transition: all 0.3s ease;
 }
 
 .expertise-card:hover {
-  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 20px 40px -15px rgba(102, 102, 102, 0.767);
   transform: translateY(-4px);
 }
 
@@ -48,7 +48,8 @@
 }
 
 .expertise-card:hover .expertise-icon-wrapper {
-  background-color: var(--expertise-white);
+  background-color: #0051D5;
+  color: #ffffff;
 }
 
 .expertise-card-title {
@@ -60,5 +61,9 @@
 }
 
 .expertise-link {
-  color: var(--expertise-accent-fixed-dark);
+  color: var(--expertise-accent-fixed-dark/50);
+}
+
+.expertise-card:hover {
+  color: #0051D5;
 }

@@ -67,14 +67,14 @@ export default function Expertise() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             className="text-4xl md:text-6xl font-black mb-5 font-display tracking-tight max-w-8xl mx-auto leading-[1.1] expertise-heading"
-          >Software engineered for <span>operational excellence.</span>
+          >Software engineered for <br /><span>operational excellence.</span>
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="max-w-2xl mx-auto text-xl leading-relaxed expertise-paragraph"
+            className="max-w-2xl mx-auto mb-15 text-xl leading-relaxed expertise-paragraph"
           >
             We deliver industry-specific platforms that solve complex organizational challenges with simple, intuitive experiences.
           </motion.p>
@@ -104,7 +104,7 @@ export default function Expertise() {
                 <p className="text-xs font-medium leading-relaxed transition-colors flex-1 group-hover:text-white/90 expertise-card-desc">
                   {service.desc}
                 </p>
-                <div className="flex items-center gap-2 text-[10px] font-black uppercase tracking-[0.2em] cursor-pointer group-hover:gap-4 transition-all pt-2 group-hover:text-white expertise-link">
+                <div className="flex items-center gap-2 text-[10px] uppercase tracking-[0.2em] cursor-pointer group-hover:gap-4 transition-all pt-2 expertise-link">
                   Learn More <ChevronRight className="w-4 h-4" />
                 </div>
               </div>

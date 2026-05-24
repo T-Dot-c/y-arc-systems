@@ -1,0 +1,15 @@
+export const ROUTES = {
+  HOME: '/',
+  ERP_SYSTEM: '/erp-system',
+  ERP_FINANCE: '/erp-finance',
+  BLOG: '/blog',
+  CASE_STUDIES: '/case-studies',
+  SOFTWARE_DEV: '/software-development',
+  WEB_SOLUTIONS: '/web-solutions',
+  CYBER_SECURITY: '/cyber-security',
+  IT_INFRASTRUCTURE: '/it-infrastructure',
+  ABOUT: '/about',
+  CONTACT: '/contact',
+  DASHBOARD: '/dashboard',
+  LOGIN: '/login',
+};

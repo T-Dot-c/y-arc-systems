@@ -1,49 +1,38 @@
 import { motion } from 'motion/react';
 import { Package, ShieldCheck, Star } from 'lucide-react';
+import './WhyUs.css';
 
 const reasons = [
-  {
-    title: 'All-In-One Approach',
-    desc: 'End-to-end IT services, design, and development across industrial sectors.',
-    icon: <Package className="w-6 h-6" />
-  },
-  {
-    title: 'Customer Service',
-    desc: 'Tailored expert advice to help you achieve goals in demanding environments.',
-    icon: <ShieldCheck className="w-6 h-6" />
-  },
-  {
-    title: 'Commitment',
-    desc: 'Your trusted partner, aligning our technology with your business success.',
-    icon: <Star className="w-6 h-6" />
-  }
+  { title: 'All-In-One Approach', desc: 'End-to-end IT services, design, and development across industrial sectors.', icon: <Package className="w-6 h-6" /> },
+  { title: 'Customer Service', desc: 'Tailored expert advice to help you achieve goals in demanding environments.', icon: <ShieldCheck className="w-6 h-6" /> },
+  { title: 'Commitment', desc: 'Your trusted partner, aligning our technology with your business success.', icon: <Star className="w-6 h-6" /> },
 ];
 
 export default function WhyUs() {
   return (
-    <section className="py-20 px-6 bg-transparent overflow-hidden">
-      <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+    <section className="whyus-section">
+      <div className="whyus-container">
+        <div className="whyus-layout">
           {/* Left Side: Content */}
-          <div className="space-y-8">
+          <div className="whyus-left">
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <h2 className="text-5xl md:text-7xl font-black font-display text-white leading-[1.1] mb-8">
+              <h2 className="whyus-heading">
                 Why Y ARC <br />
                 Systems
               </h2>
-              <p className="text-lg text-white/60 leading-relaxed max-w-xl">
+              <p className="whyus-subtext">
                 We draw on deep expertise and qualified resources to deliver leading IT services for Ethiopian enterprises, building enduring relationships based on trust.
               </p>
             </motion.div>
           </div>
 
           {/* Right Side: Cards */}
-          <div className="space-y-6">
+          <div className="whyus-cards">
             {reasons.map((reason, i) => (
               <motion.div
                 key={i}
@@ -51,18 +40,14 @@ export default function WhyUs() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
-                className="bg-white/5 backdrop-blur-sm p-8 rounded-[2rem] border border-white/5 flex items-start gap-6 group hover:shadow-2xl hover:-translate-y-1 transition-all duration-300"
+                className="whyus-card"
               >
-                <div className="flex-shrink-0 w-16 h-16 rounded-2xl bg-secondary-fixed/10 text-secondary-fixed flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                <div className="whyus-icon-wrap">
                   {reason.icon}
                 </div>
-                <div className="space-y-3">
-                  <h3 className="text-2xl font-bold text-white font-display">
-                    {reason.title}
-                  </h3>
-                  <p className="text-white/50 text-base leading-relaxed">
-                    {reason.desc}
-                  </p>
+                <div className="whyus-card-body">
+                  <h3 className="whyus-card-title">{reason.title}</h3>
+                  <p className="whyus-card-desc">{reason.desc}</p>
                 </div>
               </motion.div>
             ))}

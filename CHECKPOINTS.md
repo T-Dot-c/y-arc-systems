@@ -153,3 +153,13 @@
   - **Sitemap Mapping**: Fully documented 23+ services and industry sectors across the platform's mega-menu system.
   - **Tech Stack Verification**: Confirmed and documented usage of React 19, TypeScript, Tailwind CSS 4, and Motion.
 
+## [2026-05-23] Architecture Standardization & Backend Scaffold
+- **Status**: Verified & Documented
+- **Key Features**:
+  - **Global Layout Wrapper**: Implemented `src/layouts/Layout.tsx` to encapsulate Navbar, Footer, CursorGlow, and FloatingActions, reducing redundancy across all pages.
+  - **App.tsx Refactor**: Standardized routing structure using React Router v7 layout routes, simplifying the main application entry point.
+  - **Express Backend Scaffold**: Initialized a new `server/` directory with an Express environment configured for enterprise API development.
+  - **Gemini AI Integration**: Developed a centralized `GeminiService` using the `@google/genai` SDK, supporting both synchronized and streaming content generation.
+  - **Formal Architecture Blueprint**: Created `architecture_recommendation.md` detailing the hybrid monorepo structure and page-specific componentization strategy.
+  - **Dependency Updates**: Integrated `cors` and environment variable management (`dotenv`) to support full-stack communication.
+

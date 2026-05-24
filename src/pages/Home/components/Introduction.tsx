@@ -1,35 +1,34 @@
 import { motion } from 'motion/react';
-import { ArrowRight } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import './Introduction.css';
 
 export default function Introduction() {
   return (
-    <section className="min-h-[50vh] flex items-center justify-center px-6 overflow-hidden bg-transparent">
-      <div className="max-w-6xl mx-auto w-full flex flex-col lg:flex-row items-center justify-center gap-12 lg:gap-20">
+    <section className="intro-section">
+      <div className="intro-container">
         {/* Headline Section */}
-        <div className="flex-1 text-center lg:text-left">
+        <div className="intro-headline-col">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="text-4xl md:text-[45px] font-black font-display leading-[1.1] tracking-tight"
+            className="intro-heading"
           >
-            <span className="text-secondary-fixed block mb-1">Ethiopia’s Go-To <span className="text-white/90">for<br />ERP</span>, and Web Solutions</span>
+            <span className="intro-heading-accent">Ethiopia's Go-To <span className="intro-heading-white">for<br />ERP</span>, and Web Solutions</span>
           </motion.h2>
         </div>
 
         {/* Body Text & CTA Section */}
-        <div className="flex-1 text-center lg:text-left">
+        <div className="intro-body-col">
           <motion.div
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="space-y-8"
+            className="intro-body-inner"
           >
-            <p className="text-lg md:text-[18px] text-white/70 leading-relaxed font-sans">
-              <span className="font-bold text-secondary-fixed">Y Arc System</span> transforms your operations with cutting-edge digital solutions. From comprehensive <span className="text-white/80 font-medium">ERP systems</span> and <span className="text-white/80 font-medium">user-friendly websites</span> to <span className="text-white/80 font-medium">custom software</span> tailored to your unique needs, we provide the scalable technology required to thrive in Ethiopia’s growing tech landscape.
+            <p className="intro-body-text">
+              <span className="intro-bold-accent">Y Arc System</span> transforms your operations with cutting-edge digital solutions. From comprehensive <span className="intro-highlight">ERP systems</span> and <span className="intro-highlight">user-friendly websites</span> to <span className="intro-highlight">custom software</span> tailored to your unique needs, we provide the scalable technology required to thrive in Ethiopia's growing tech landscape.
             </p>
           </motion.div>
         </div>

@@ -1,0 +1,12 @@
+Γùç injected env (0) from .env // tip: Γùê secrets for agents [www.dotenvx.com]
+C:\Users\Tewolde\Desktop\Antigravity\y-arc-systems\server\config\env.ts:6
+  throw new Error('FATAL: GEMINI_API_KEY is not defined in environment variables.');
+        ^
+
+Error: FATAL: GEMINI_API_KEY is not defined in environment variables.
+    at <anonymous> (C:\Users\Tewolde\Desktop\Antigravity\y-arc-systems\server\config\env.ts:6:9)
+    at ModuleJob.run (node:internal/modules/esm/module_job:430:25)
+    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:661:26)
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5)
+
+Node.js v24.14.1
