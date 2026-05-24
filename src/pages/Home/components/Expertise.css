@@ -1,0 +1,64 @@
+.expertise-section {
+  --expertise-bg: #f9f9f9;
+  --expertise-surface: #ffffff;
+  --expertise-border: #ffffff;
+  --expertise-text-primary: #050510;
+  --expertise-text-secondary: #3d3d3d;
+  --expertise-text-muted: #64748b;
+  --expertise-accent: #3d3d3d;
+  --expertise-accent-fixed: #dbe1ff;
+  --expertise-accent-fixed-dark: #3d3d3d;
+  --expertise-white: #F0F4F8;
+
+  background-color: var(--expertise-bg);
+}
+
+.expertise-heading {
+  color: var(--expertise-accent-fixed-dark);
+}
+
+.expertise-heading span {
+  color: var(--expertise-text-primary);
+}
+
+.expertise-paragraph {
+  color: var(--expertise-text-secondary);
+}
+
+.expertise-card {
+  background-color: var(--expertise-surface);
+  border-color: var(--expertise-border);
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.expertise-card:hover {
+  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.1);
+  transform: translateY(-4px);
+}
+
+/* .expertise-card:hover {
+  background-color: var(--expertise-accent-fixed-dark) !important;
+} */
+
+.expertise-icon-wrapper {
+  background-color: rgba(219, 225, 255, 0.2);
+  /* Using accent-fixed with opacity */
+  color: var(--expertise-accent-fixed-dark);
+}
+
+.expertise-card:hover .expertise-icon-wrapper {
+  background-color: var(--expertise-white);
+}
+
+.expertise-card-title {
+  color: var(--expertise-text-primary);
+}
+
+.expertise-card-desc {
+  color: var(--expertise-text-muted);
+}
+
+.expertise-link {
+  color: var(--expertise-accent-fixed-dark);
+}

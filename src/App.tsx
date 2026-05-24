@@ -4,21 +4,21 @@
  */
 
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Navbar from './components/Navbar';
-import Home from './pages/Home';
-import ERPSystem from './pages/ERPSystem';
-import ERPFinance from './pages/ERPFinance';
-import Blog from './pages/Blog';
-import CaseStudies from './pages/CaseStudies';
-import OurClients from './pages/OurClients';
-import Testimonials from './pages/Testimonials';
-import OurStory from './pages/OurStory';
-import SoftwareDevelopment from './pages/SoftwareDevelopment';
-import WebSolutions from './pages/WebSolutions';
-import Footer from './components/Footer';
-import CursorGlow from './components/CursorGlow';
-import ScrollToTop from './components/ScrollToTop';
-import FloatingActions from './components/FloatingActions';
+import Navbar from './components/shared/Navbar';
+import Home from './pages/Home/Home';
+import ERPSystem from './pages/ERPSystem/ERPSystem';
+import ERPFinance from './pages/ERPFinance/ERPFinance';
+import Blog from './pages/Blog/Blog';
+import CaseStudies from './pages/CaseStudies/CaseStudies';
+import OurClients from './pages/OurClients/OurClients';
+import Testimonials from './pages/Testimonials/Testimonials';
+import OurStory from './pages/OurStory/OurStory';
+import SoftwareDevelopment from './pages/SoftwareDevelopment/SoftwareDevelopment';
+import WebSolutions from './pages/WebSolutions/WebSolutions';
+import Footer from './components/shared/Footer';
+import CursorGlow from './components/shared/CursorGlow';
+import ScrollToTop from './components/shared/ScrollToTop';
+import FloatingActions from './components/shared/FloatingActions';
 
 export default function App() {
   return (
