@@ -43,6 +43,19 @@ const services = [
 function ContactSection() {
   const [form, setForm] = useState({ name: '', email: '', company: '', phone: '', service: '', message: '' });
   const [submitted, setSubmitted] = useState(false);
+  const [countryDropdownOpen, setCountryDropdownOpen] = useState(false);
+  const [selectedCountry, setSelectedCountry] = useState({ flag: '🇪🇹', name: 'Ethiopia', code: '+251' });
+
+  const countries = [
+    { flag: '🇪🇹', name: 'Ethiopia', code: '+251' },
+    { flag: '🇰🇪', name: 'Kenya', code: '+254' },
+    { flag: '🇹🇿', name: 'Tanzania', code: '+255' },
+    { flag: '🇺🇬', name: 'Uganda', code: '+256' },
+    { flag: '🇳🇬', name: 'Nigeria', code: '+234' },
+    { flag: '🇺🇸', name: 'United States', code: '+1' },
+    { flag: '🇬🇧', name: 'United Kingdom', code: '+44' },
+    { flag: '🇮🇩', name: 'Indonesia', code: '+62' },
+  ];
 
   const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setForm(prev => ({ ...prev, [e.target.name]: e.target.value }));
@@ -163,10 +176,43 @@ function ContactSection() {
                     <label htmlFor="contact-phone" className="text-xs font-semibold text-on-background uppercase tracking-wide">
                       Your Phone
                     </label>
-                    <div className="flex rounded-lg border border-surface-container bg-surface overflow-hidden focus-within:ring-2 focus-within:ring-secondary transition">
-                      <span className="flex items-center gap-1.5 px-3 text-sm text-outline-variant border-r border-surface-container select-none whitespace-nowrap">
-                        🇪🇹 +251
-                      </span>
+                    <div className="flex rounded-lg border border-surface-container bg-surface overflow-hidden focus-within:ring-2 focus-within:ring-secondary transition relative">
+                      {/* Custom Country Code Dropdown */}
+                      <div className="relative">
+                        <button
+                          type="button"
+                          onClick={() => setCountryDropdownOpen(!countryDropdownOpen)}
+                          className="flex items-center gap-1.5 px-3 py-2.5 text-sm text-outline-variant border-r border-surface-container select-none whitespace-nowrap hover:bg-surface-container/50 transition"
+                        >
+                          <span className="text-lg leading-none">{selectedCountry.flag}</span>
+                          <span className="font-medium">{selectedCountry.code}</span>
+                        </button>
+
+                        {/* Dropdown Menu */}
+                        {countryDropdownOpen && (
+                          <div className="absolute top-full left-0 mt-1 w-72 bg-surface border border-surface-container rounded-lg shadow-xl z-50 max-h-64 overflow-y-auto">
+                            {countries.map((country) => (
+                              <button
+                                key={`${country.code}-${country.name}`}
+                                type="button"
+                                onClick={() => {
+                                  setSelectedCountry(country);
+                                  setCountryDropdownOpen(false);
+                                }}
+                                className="w-full flex items-center gap-3 px-4 py-2.5 text-sm text-on-background hover:bg-secondary/10 transition text-left border-b border-surface-container last:border-b-0 active:bg-secondary/20"
+                              >
+                                <span className="text-lg leading-none">{country.flag}</span>
+                                <div className="flex-1 flex flex-col">
+                                  <div className="font-medium text-on-background">{country.name}</div>
+                                  <div className="text-xs text-outline-variant">{country.code}</div>
+                                </div>
+                              </button>
+                            ))}
+                          </div>
+                        )}
+                      </div>
+
+                      {/* Phone Input */}
                       <input
                         id="contact-phone"
                         name="phone"

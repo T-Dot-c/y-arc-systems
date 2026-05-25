@@ -56,13 +56,13 @@
 }
 
 .intro-heading-accent {
-  color: var(--color-secondary-fixed, #0051d5);
+  color: #0051d5;
   display: block;
   margin-bottom: 0.25rem;
 }
 
 .intro-heading-white {
-  color: #0051d5;
+  color: #3d3d3d;
 }
 
 /* --- Body text side --- */
@@ -98,7 +98,7 @@
 
 .intro-bold-accent {
   font-weight: 700;
-  color: var(--color-secondary-fixed, #000000);
+  color: #0051d5;
 }
 
 .intro-highlight {
