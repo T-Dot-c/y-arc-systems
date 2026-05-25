@@ -70,10 +70,12 @@ export default function Hero() {
               transition={{ delay: 0.8, duration: 0.8 }}
               className="hero-cta-wrap"
             >
-              <motion.button
+              <motion.a
+                href="/contact"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="hero-cta-button"
+                aria-label="Request a demo"
               >
                 Request a Demo
                 <motion.div
@@ -83,7 +85,7 @@ export default function Hero() {
                 >
                   <ArrowRight className="hero-cta-icon" />
                 </motion.div>
-              </motion.button>
+              </motion.a>
             </motion.div>
           </div>
 

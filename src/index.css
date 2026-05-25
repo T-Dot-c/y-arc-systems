@@ -75,3 +75,13 @@
     transform: translateX(-50%);
   }
 }
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+  /* hide purely decorative animated icons */
+  .hero-cta-icon { display: none !important; }
+}
