@@ -1,13 +1,9 @@
 import { motion } from 'motion/react';
 import { BarChart3, Star, ThumbsUp, RefreshCcw, Rocket, Lightbulb } from 'lucide-react';
+import { benefitsData } from './data/homeContentData';
 import './Benefits.css';
 
-const benefits = [
-  { title: 'Improved Productivity', desc: 'Automate redundancy to focus your team on high-value activities.', icon: <RefreshCcw className="w-6 h-6" /> },
-  { title: 'Better Analytics', desc: 'Centralized data for better intelligence and real-time decisions.', icon: <BarChart3 className="w-6 h-6" /> },
-  { title: 'Grow Business', desc: 'Optimize resources and eliminate inefficiencies to scale your business.', icon: <Star className="w-6 h-6" /> },
-  { title: 'Minimize Errors', desc: 'Reduce human error with seamless, accurate data flow across departments.', icon: <ThumbsUp className="w-6 h-6" /> },
-];
+const { benefits, heading, subtext } = benefitsData;
 
 export default function Benefits() {
   return (
@@ -27,10 +23,10 @@ export default function Benefits() {
               className="benefits-header"
             >
               <h2 className="benefits-heading">
-                What Are the <span className="benefits-heading-accent">Benefits of Software</span> for Your Business?
+                {heading}
               </h2>
               <p className="benefits-subtext">
-                Manage all business functions within a centralized, integrated system to drive operational excellence.
+                {subtext}
               </p>
             </motion.div>
 

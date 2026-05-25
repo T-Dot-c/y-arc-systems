@@ -1,12 +1,8 @@
 import { motion } from 'motion/react';
-import { Package, ShieldCheck, Star } from 'lucide-react';
+import { whyUsData } from './data/homeContentData';
 import './WhyUs.css';
 
-const reasons = [
-  { title: 'All-In-One Approach', desc: 'End-to-end IT services, design, and development across industrial sectors.', icon: <Package className="w-6 h-6" /> },
-  { title: 'Customer Service', desc: 'Tailored expert advice to help you achieve goals in demanding environments.', icon: <ShieldCheck className="w-6 h-6" /> },
-  { title: 'Commitment', desc: 'Your trusted partner, aligning our technology with your business success.', icon: <Star className="w-6 h-6" /> },
-];
+const { reasons, heading, subtext } = whyUsData;
 
 export default function WhyUs() {
   return (
@@ -22,11 +18,10 @@ export default function WhyUs() {
               transition={{ duration: 0.6 }}
             >
               <h2 className="whyus-heading">
-                Why Y ARC <br />
-                Systems
+                {heading}
               </h2>
               <p className="whyus-subtext">
-                We draw on deep expertise and qualified resources to deliver leading IT services for Ethiopian enterprises, building enduring relationships based on trust.
+                {subtext}
               </p>
             </motion.div>
           </div>

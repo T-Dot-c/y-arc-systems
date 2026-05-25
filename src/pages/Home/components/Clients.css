@@ -107,7 +107,7 @@
 .clients-card:hover .clients-card-img {
   opacity: 1;
   filter: none;
-  transform: scale(1.7);
+  transform: scale(1.4);
 }
 
 .clients-card-fallback {

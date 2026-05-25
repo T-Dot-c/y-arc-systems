@@ -1,46 +1,8 @@
 import { motion } from 'motion/react';
-import { Database, Code, Globe, Cloud, Layout, Shield, Handshake, ChevronRight } from 'lucide-react';
+import { ChevronRight } from 'lucide-react';
+import { expertiseData } from './data/homeContentData';
 
 import './Expertise.css';
-
-const services = [
-  {
-    id: 'enterprise-solutions',
-    icon: <Database className="w-8 h-8" />,
-    title: 'Enterprise Solutions (ERP)',
-    desc: 'Integrated ERP and CRM modules including Finance, HR/Payroll, Inventory, and Real Estate sales automation designed for total financial transparency.'
-  },
-  {
-    id: 'custom-dev',
-    icon: <Code className="w-8 h-8" />,
-    title: 'Custom Software Development',
-    desc: 'Tailored software designed to replace fragmented, manual processes with integrated digital workflows and scalable internal platforms.'
-  },
-  {
-    id: 'web-digital',
-    icon: <Globe className="w-8 h-8" />,
-    title: 'Web & Digital Solutions',
-    desc: 'Custom-designed, professional, and responsive corporate websites and full-scale E-Commerce platforms optimized for engagement.'
-  },
-  {
-    id: 'system-integration',
-    icon: <Cloud className="w-8 h-8" />,
-    title: 'System Integration',
-    desc: 'Connecting third-party services, SMS/payment gateways, and biometric hardware to ensure seamless data flow across platforms.'
-  },
-  {
-    id: 'security-infra',
-    icon: <Shield className="w-8 h-8" />,
-    title: 'Security & Infrastructure',
-    desc: 'Professional installation of CCTV surveillance, network infrastructure, and hardware-software synchronization for secure operations.'
-  },
-  {
-    id: 'support-maintenance',
-    icon: <Handshake className="w-8 h-8" />,
-    title: 'Support & Maintenance',
-    desc: 'Regular updates, personalized staff training, and end-to-end implementation services to ensure long-term system stability.'
-  }
-];
 
 const container = {
   hidden: { opacity: 0 },
@@ -58,6 +20,8 @@ const item = {
 };
 
 export default function Expertise() {
+  const { services, heading, paragraph } = expertiseData;
+
   return (
     <section id="expertise" className="py-20 px-2 relative overflow-hidden expertise-section">
       <div className="max-w-7xl mx-auto relative z-10">
@@ -67,7 +31,7 @@ export default function Expertise() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             className="text-4xl md:text-6xl font-black mb-5 font-display tracking-tight max-w-8xl mx-auto leading-[1.1] expertise-heading"
-          >Software engineered for <br /><span>operational excellence.</span>
+          >{heading}
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -76,7 +40,7 @@ export default function Expertise() {
             transition={{ delay: 0.1 }}
             className="max-w-2xl mx-auto mb-15 text-xl leading-relaxed expertise-paragraph"
           >
-            We deliver industry-specific platforms that solve complex organizational challenges with simple, intuitive experiences.
+            {paragraph}
           </motion.p>
         </div>
 

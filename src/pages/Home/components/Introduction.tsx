@@ -1,4 +1,5 @@
 import { motion } from 'motion/react';
+import { introductionData } from './data/homeContentData';
 import './Introduction.css';
 
 export default function Introduction() {
@@ -14,7 +15,12 @@ export default function Introduction() {
             transition={{ duration: 0.8 }}
             className="intro-heading"
           >
-            <span className="intro-heading-accent">Ethiopia's Go-To <span className="intro-heading-white">for<br />ERP</span>, and Web Solutions</span>
+            <span className="intro-heading-accent">
+              {introductionData.headingLine1}{' '}
+              <span className="intro-heading-white">
+                {introductionData.headingLine2}
+              </span>
+            </span>
           </motion.h2>
         </div>
 
@@ -28,7 +34,7 @@ export default function Introduction() {
             className="intro-body-inner"
           >
             <p className="intro-body-text">
-              <span className="intro-bold-accent">Y Arc System</span> transforms your operations with cutting-edge digital solutions. From comprehensive <span className="intro-highlight">ERP systems</span> and <span className="intro-highlight">user-friendly websites</span> to <span className="intro-highlight">custom software</span> tailored to your unique needs, we provide the scalable technology required to thrive in Ethiopia's growing tech landscape.
+              {introductionData.body}
             </p>
           </motion.div>
         </div>
